@@ -20,6 +20,8 @@ bitcoin-cli dumptxoutset  <output file location>/snapshots.dat - for creating ut
 
 bitcoin-cli loadtxoutset "path" - for loading the utxo snapshots
 
+### Open PR [here](https://github.com/bitcoin/bitcoin/pull/15606)
+
 
 
 
