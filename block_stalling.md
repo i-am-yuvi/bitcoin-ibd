@@ -16,7 +16,7 @@ to prioritize faster peers.
 After the node has figured the stalled peer from the check [`if (state.m_stalling_since.count() && state.m_stalling_since < current_time - stalling_timeout)`](https://github.com/bitcoin/bitcoin/blob/638a4c0bd8b53766faeb437244b2aae4eed28dcf/src/net_processing.cpp#L5853C9-L5853C104),
 after that node will flag `fDisconnect` to `true` which will cause the disconnection to the peer next time [DisconnectNode()](https://github.com/bitcoin/bitcoin/blob/638a4c0bd8b53766faeb437244b2aae4eed28dcf/src/net.cpp#L3662) runs.
 After disconnecting a peer, we make sure that we don't disconnect next peer where our bandwidth might be the cause, so for that case we increase
-the timeout to double or `BLOCK_STALLING_TIMEOUT_MAX`(maximum timeout for block stalling, 64 secs) whichever is lower.
+the timeout to double(4 secs, 8 secs) or `BLOCK_STALLING_TIMEOUT_MAX`(maximum timeout for block stalling, 64 secs) whichever is lower.
 
 
 [#30251](https://github.com/bitcoin/bitcoin/pull/32051) : to-do
