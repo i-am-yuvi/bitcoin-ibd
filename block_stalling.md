@@ -18,8 +18,7 @@ after that node will flag `fDisconnect` to `true` which will cause the disconnec
 After disconnecting a peer, we make sure that we don't disconnect next peer where our bandwidth might be the cause, so for that case we increase
 the timeout to double(4 secs, 8 secs) or `BLOCK_STALLING_TIMEOUT_MAX`(maximum timeout for block stalling, 64 secs) whichever is lower.
 
-
-[#30251](https://github.com/bitcoin/bitcoin/pull/32051) : to-do
+Functional Test to view this in more detail, [here](https://github.com/bitcoin/bitcoin/blob/master/test/functional/p2p_ibd_stalling.py)
 
 
 
